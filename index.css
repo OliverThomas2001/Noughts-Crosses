@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+}
+h1 {
+    font-size: 30px;
+    margin: 10px;
+    border: 2px dotted green;
+}
+
+#header-upper h1 {
+    position: relative;
+    left: 170px;
+}
+
+#header-lower h1 {
+    position: relative;
+    left: 315px;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap:wrap;
+}
+
+#whole {
+    border: 4px dotted red;
+    width: 750px;
+    display: flex;
+}
+
+#header-upper {
+    border: 4px dotted yellow;
+    width: 100%;
+}
+
+#header-lower {
+    border: 4px dotted blue;
+    width: 100%;
+}
+
+#grid {
+    border: 4px dotted green;
+    width: 80%;
+    position: relative;
+    left: 10%;
+}
+
+.grid-section {
+    width: 195.2px;
+    height: 195.2px;
+}
+
+#tl {
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+#tm {
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+}
+
+#tr {
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+#ml {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+
+#mm {
+    border: 3px solid black;
+}
+
+#mr {
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    border-top: 3px solid black;
+}
+
+#bl {
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+}
+
+#bm {
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+}
+
+#br {
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+}
