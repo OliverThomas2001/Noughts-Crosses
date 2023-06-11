@@ -1,12 +1,14 @@
-const boardArr = [
+let boardArr = [
     ["", "", ""],
     ["", "", ""],
     ["", "", ""]
-                ]
-const grid = document.querySelector("#grid");
-grid.addEventListener("click", induceCompTurn);
+                ];
+//const grid = document.querySelector("#grid");
+//grid.addEventListener("click", induceCompTurn);
 const gridTiles = document.querySelectorAll(".grid-section");
 gridTiles.forEach(el => el.addEventListener("click", addCharacter, {once:true}));
+const playerScore = document.querySelector("#player");
+const compScore = document.querySelector("#computer");
 
 
 function induceCompTurn() {
@@ -24,8 +26,13 @@ function addCharacter(el) {
         editBoardArr(el.target.id, "X")
         console.log(hasWon(boardArr, "X"));
         if (hasWon(boardArr, "X")) {
-            
+            gridTiles.forEach(el => el.removeEventListener("click", addCharacter));
             alert("You have won!");
+            updateScore("X");
+            resetBoard();
+
+        } else {
+            induceCompTurn();
         }
     }
 }
@@ -152,6 +159,32 @@ function compTurn(arr) { //always pass in determinePlayableSpaces(boardArr)
 
     editBoardArr(idChoice, "O");
     if (hasWon(boardArr, "O")) {
+        gridTiles.forEach(el => el.removeEventListener("click", addCharacter));
         alert("Computer has won!")
+    }
+}
+
+
+function resetBoard() {
+    boardArr = [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+                    ];
+    gridTiles.forEach(el => el.addEventListener("click", addCharacter, {once:true}));
+    gridTiles.forEach(el => el.innerHTML = "");
+}
+
+function updateScore(player) {
+    if (player === "X") {
+        let score = Number(playerScore.textContent);
+        score ++
+        playerScore.textContent = score;
+    }
+
+    if (player === "O") {
+        let score = Number(compScore.textContent)
+        score ++
+        compScore.textContent = score;
     }
 }
