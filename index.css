@@ -2,6 +2,12 @@
     box-sizing: border-box;
     text-align: center;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
     font-size: 30px;
     margin: 10px;
@@ -45,6 +51,7 @@ h1 {
 .grid-section {
     width: 195.2px;
     height: 195.2px;
+    
 }
 
 #tl {
